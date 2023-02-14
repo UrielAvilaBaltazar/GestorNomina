@@ -27,7 +27,7 @@ class EmpleadosController extends Controller
     public function create()
     {
         //agregan datos
-        return "vista de agregar empleados en creacion";
+        return view('agregar');
     }
 
     /**
@@ -50,6 +50,7 @@ class EmpleadosController extends Controller
     public function show(Empleados $empleados)
     {
         //muestra un dato 
+        return view('eliminar');
     }
 
     /**
@@ -61,7 +62,7 @@ class EmpleadosController extends Controller
     public function edit(Empleados $empleados)
     {
         //
-        return "vista de editar empleados en creacion";
+        return view('actualizar');
     }
 
     /**

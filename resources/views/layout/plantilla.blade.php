@@ -13,6 +13,7 @@
   </head>
   <body>
     <div class="conteiner">
+      <br><br>
         @yield('Contenido')
     </div>
     <!-- Optional JavaScript; choose one of the two! -->

@@ -11,7 +11,9 @@
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p>
-                <a href="{{ route("empleados.create")}}" class="btn btn-primary">Agregar Empleado</a>
+                <a href="{{ route("empleados.create")}}" class="btn btn-primary">
+                    <span class="fa fa-user-plus"> </span>  Agregar Empleado
+                </a>
             </p>
             <hr>
             <p class="card-text">
@@ -34,8 +36,20 @@
                                     <td>{{$item->amaterno}}</td>
                                     <td>{{$item->puesto}}</td>
                                     <td>{{$item->salario}}</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>
+                                        <form action="">
+                                            <button class="btn btn-warning btn-sm">
+                                                <span class="fas fa-user-edit"></span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="">
+                                            <button class="btn btn-danger btn-sm">
+                                                <span class="fas fa-user-slash"></span>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
