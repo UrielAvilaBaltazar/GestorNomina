@@ -20,14 +20,18 @@
                 <th>Salario</th>
             </thead>
             <tbody>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
+                <td>{{$empleados->nombre}}</td>
+                <td>{{$empleados->apaterno}}</td>
+                <td>{{$empleados->amaterno}}</td>
+                <td>{{$empleados->puesto}}</td>
+                <td>{{$empleados->salario}}</td>
             </tbody>
         </table>
-        <button class="btn btn-primary">Eliminar</button>
-        <a href="{{ route("empleados.index") }}" class="btn btn-info">Regresar</a>
+        <form action="{{ route('empleados.destroy', $empleados->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-primary">Eliminar</button>
+            <a href="{{ route("empleados.index") }}" class="btn btn-info">Regresar</a> 
+        </form>
     </div>
 @endsection

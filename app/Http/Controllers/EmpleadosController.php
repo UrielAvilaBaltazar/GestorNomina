@@ -7,84 +7,68 @@ use Illuminate\Http\Request;
 
 class EmpleadosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //incio
-        $datos = Empleados::all();
+        $datos = Empleados::paginate(2);
         return view('inicio', compact('datos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //agregan datos
         return view('agregar');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //guarda los datos
+        $empleados = new Empleados();
+        $empleados->nombre = $request->post('nombre');
+        $empleados->apaterno = $request->post('apaterno');
+        $empleados->amaterno = $request->post('amaterno');
+        $empleados->puesto = $request->post('puesto');
+        $empleados->salario = $request->post('salario');
+        $empleados->save();
+
+        return redirect()->route("empleados.index")->with("success", "Nuevo empleado agregado");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Empleados  $empleados
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Empleados $empleados)
+    public function show($id)
     {
         //muestra un dato 
-        return view('eliminar');
+        $empleados = Empleados::find($id);
+        return view('eliminar', compact('empleados'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Empleados  $empleados
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Empleados $empleados)
+    public function edit($id)
     {
-        //
-        return view('actualizar');
+        //encuantra el dato
+        $empleados = Empleados::find($id);
+
+        return view('actualizar', compact('empleados'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Empleados  $empleados
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Empleados $empleados)
+    public function update(Request $request, $id)
     {
-        //
+        //actualiza datos
+        $empleados = Empleados::find($id);
+        $empleados->nombre = $request->post('nombre');
+        $empleados->apaterno = $request->post('apaterno');
+        $empleados->amaterno = $request->post('amaterno');
+        $empleados->puesto = $request->post('puesto');
+        $empleados->salario = $request->post('salario');
+        $empleados->save();
+
+        return redirect()->route("empleados.index")->with("success", "Empleado Actualizado");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Empleados  $empleados
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Empleados $empleados)
+    public function destroy($id)
     {
-        //
+        //elimina datos
+        $empleados = Empleados::find($id);
+        $empleados->delete();
+        return redirect()->route("empleados.index")->with("success", "Empleado borrado");
     }
 }

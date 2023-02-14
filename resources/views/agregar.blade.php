@@ -8,7 +8,8 @@
         <div class="card-body">
 
             <p class="card-text">
-                <form action="">
+                <form action="{{ route('empleados.store') }}" method="POST">
+                    @csrf
                     <label for="">Nombre</label>
                     <input type="text" name="nombre" class="form-control" required>
                     <label for="">Apellido Paterno</label>

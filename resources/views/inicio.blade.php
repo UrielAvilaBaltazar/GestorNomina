@@ -9,6 +9,15 @@
             Featured
         </div>
         <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    @if ($mensaje = Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{$mensaje}}
+                        </div>
+                    @endif  
+                </div>
+            </div>
             <h5 class="card-title">Special title treatment</h5>
             <p>
                 <a href="{{ route("empleados.create")}}" class="btn btn-primary">
@@ -37,14 +46,14 @@
                                     <td>{{$item->puesto}}</td>
                                     <td>{{$item->salario}}</td>
                                     <td>
-                                        <form action="">
+                                        <form action="{{ route('empleados.edit',$item->id) }}" method="GET">
                                             <button class="btn btn-warning btn-sm">
                                                 <span class="fas fa-user-edit"></span>
                                             </button>
                                         </form>
                                     </td>
                                     <td>
-                                        <form action="">
+                                        <form action="{{ route('empleados.show',$item->id) }}" method="GET">
                                             <button class="btn btn-danger btn-sm">
                                                 <span class="fas fa-user-slash"></span>
                                             </button>
@@ -54,6 +63,12 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ $datos->links() }}
+                        </div>
+                    </div>
                 </div>
             </p>
 
