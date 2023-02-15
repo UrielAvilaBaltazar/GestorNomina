@@ -4,9 +4,8 @@
 
 @section('Contenido')
     <div class="card">
-        <br><br>
         <div class="card-header">
-            Featured
+            <h1>TLR Electrodomesticos</h1> 
         </div>
         <div class="card-body">
             <div class="row">
@@ -18,17 +17,18 @@
                     @endif  
                 </div>
             </div>
-            <h5 class="card-title">Special title treatment</h5>
+            <h3 class="card-title">Sistema de gestión de empleados activos</h3>
+            <br>
             <p>
-                <a href="{{ route("empleados.create")}}" class="btn btn-primary">
+                <a href="{{ route("empleados.create")}}" class="btn btn-lg btn-primary">
                     <span class="fa fa-user-plus"> </span>  Agregar Empleado
                 </a>
             </p>
             <hr>
             <p class="card-text">
                 <div class="table table-responsive">
-                    <table class="table table-sm table-bordered">
-                        <thead>
+                    <table class="table table-bordered table-info table-striped table-hover ">
+                        <thead class="table-dark text-center">
                             <th>Nombre</th>
                             <th>Apellido Parteno</th>
                             <th>Apellido Materno</th>
@@ -45,14 +45,14 @@
                                     <td>{{$item->amaterno}}</td>
                                     <td>{{$item->puesto}}</td>
                                     <td>{{$item->salario}}</td>
-                                    <td>
+                                    <td class="text-center">
                                         <form action="{{ route('empleados.edit',$item->id) }}" method="GET">
                                             <button class="btn btn-warning btn-sm">
                                                 <span class="fas fa-user-edit"></span>
                                             </button>
                                         </form>
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         <form action="{{ route('empleados.show',$item->id) }}" method="GET">
                                             <button class="btn btn-danger btn-sm">
                                                 <span class="fas fa-user-slash"></span>
@@ -63,15 +63,10 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            {{ $datos->links() }}
-                        </div>
+                    <div class="md-12 text-center ">
+                        {{ $datos->links() }}
                     </div>
-                </div>
             </p>
-
         </div>
     </div>
 

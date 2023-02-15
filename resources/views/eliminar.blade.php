@@ -4,20 +4,23 @@
 
 @section('Contenido')
     <div class="card">
-        <h5 class="card-header">Eliminar un empleado</h5>
+        <h3 class="card-header">Eliminar un empleado</h3>
         <div class="card-body">
-            <p class="card-text">
+            <h5 class="card-text">
                 <div class="alert alert-danger" role="alert">
-                    ¿Esta seguro de eliminar el registro?     
-            </p>    
+                    ¿Esta seguro de eliminar el registro?  <br> 
+                    (Una vez eliminado el registro no podra volver a acceder a los datos)
+                </div>
+            </h5>    
+            
         </div>
-        <table class="table table-sm table-hover">
+        <table class="table table-danger table-hover table-bordered border-dark">
             <thead>
-                <th>Nombre</th>
-                <th>Apellido Paterno</th>
-                <th>Apellido Materno</th>
-                <th>Puesto</th>
-                <th>Salario</th>
+                <th class="table-dark">Nombre</th>
+                <th class="table-dark">Apellido Paterno</th>
+                <th class="table-dark">Apellido Materno</th>
+                <th class="table-dark">Puesto</th>
+                <th class="table-dark">Salario</th>
             </thead>
             <tbody>
                 <td>{{$empleados->nombre}}</td>
@@ -27,11 +30,15 @@
                 <td>{{$empleados->salario}}</td>
             </tbody>
         </table>
+        <br>
         <form action="{{ route('empleados.destroy', $empleados->id)}}" method="POST">
             @csrf
             @method('DELETE')
-            <button class="btn btn-primary">Eliminar</button>
-            <a href="{{ route("empleados.index") }}" class="btn btn-info">Regresar</a> 
+            <div class="text-center">
+                <button class="btn btn-primary btn-lg">Eliminar</button>
+                <a href="{{ route("empleados.index") }}" class="btn btn-primary btn-lg">Regresar</a> 
+            </div>
+            
         </form>
     </div>
 @endsection
