@@ -30,6 +30,8 @@ class EmpleadosController extends Controller
         $empleados->amaterno = $request->post('amaterno');
         $empleados->puesto = $request->post('puesto');
         $empleados->salario = $request->post('salario');
+        $empleados->tel = $request->post('tel');
+        $empleados->fecha_contratacion = $request->post('fecha_contratacion');
         $empleados->save();
 
         return redirect()->route("empleados.index")->with("success", "Nuevo empleado agregado");
@@ -59,6 +61,8 @@ class EmpleadosController extends Controller
         $empleados->amaterno = $request->post('amaterno');
         $empleados->puesto = $request->post('puesto');
         $empleados->salario = $request->post('salario');
+        $empleados->tel = $request->post('tel');
+        $empleados->fecha_contratacion = $request->post('fecha_contratacion');
         $empleados->save();
 
         return redirect()->route("empleados.index")->with("success", "Empleado Actualizado");

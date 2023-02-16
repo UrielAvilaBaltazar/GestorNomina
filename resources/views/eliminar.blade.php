@@ -15,12 +15,14 @@
             
         </div>
         <table class="table table-danger table-hover table-bordered border-dark">
-            <thead>
-                <th class="table-dark">Nombre</th>
-                <th class="table-dark">Apellido Paterno</th>
-                <th class="table-dark">Apellido Materno</th>
-                <th class="table-dark">Puesto</th>
-                <th class="table-dark">Salario</th>
+            <thead class="table-dark">
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Puesto</th>
+                <th>Salario</th>
+                <th>Telefono de contacto</th>
+                <th>Fecha de contratación</th>
             </thead>
             <tbody>
                 <td>{{$empleados->nombre}}</td>
@@ -28,6 +30,8 @@
                 <td>{{$empleados->amaterno}}</td>
                 <td>{{$empleados->puesto}}</td>
                 <td>{{$empleados->salario}}</td>
+                <td>{{$empleados->tel}}</td>
+                <td>{{$empleados->fecha_contratacion}}</td>
             </tbody>
         </table>
         <br>

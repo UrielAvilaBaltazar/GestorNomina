@@ -25,14 +25,25 @@
                           <label for="floatingInput">Apellido Materno</label>
                         </div>
                     </div>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" name="puesto" required placeholder="Puesto" value="{{$empleados -> puesto}}">
+                            <label for="floatingInput">Puesto</label>
+                        </div>
+                        <div  class="col mb-3 form-floating">
+                            <input type="text" name="salario" class="form-control" required placeholder=" Salario" value="{{$empleados -> salario}}">
+                            <label for="">Salario</label>
+                        </div>
+                    </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="puesto" required placeholder="Puesto" value="{{$empleados -> puesto}}">
-                        <label for="floatingInput">Puesto</label>
+                        <input type="tel" class="form-control" name="tel" required placeholder="Telefono" value="{{$empleados -> tel}}">
+                        <label for="floatingInput">Telefono de contacto</label>
                     </div>
-                    <div  class="mb-3 form-floating">
-                        <input type="text" name="salario" class="form-control" required placeholder=" Salario" value="{{$empleados -> salario}}">
-                        <label for="">Salario</label>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" name="fecha_contratacion" required placeholder="Fecha de Contrtacion" value="{{$empleados -> fecha_contratacion}}">
+                        <label for="floatingInput">Fecha de Contrtación</label>
                     </div>
+                    
                     <br>
                     <div class="text-center">
                         <button class="btn btn-primary btn-lg">Actualizar</button>

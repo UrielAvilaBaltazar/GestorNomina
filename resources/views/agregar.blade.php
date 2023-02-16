@@ -24,13 +24,23 @@
                           <label for="floatingInput">Apellido Materno</label>
                         </div>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="puesto" required placeholder="Puesto">
-                        <label for="floatingInput">Puesto</label>
+                    <div class="row g-3">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" name="puesto" required placeholder="Puesto">
+                            <label for="floatingInput">Puesto</label>
+                        </div>
+                        <div  class=" col mb-3 form-floating">
+                            <input type="text" name="salario" class="form-control" required placeholder=" Salario">
+                            <label for="">Salario</label>
+                        </div>
                     </div>
-                    <div  class="mb-3 form-floating">
-                        <input type="text" name="salario" class="form-control" required placeholder=" Salario">
-                        <label for="">Salario</label>
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" name="tel" required placeholder="Telefono">
+                        <label for="floatingInput">Telefono</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" name="fecha_contratacion" required placeholder="Fecha de Contratacion">
+                        <label for="floatingInput">Fecha de contración</label>
                     </div>
                     
                     <br>

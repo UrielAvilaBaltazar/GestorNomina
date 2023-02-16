@@ -47,6 +47,8 @@
                                     <td>{{$item->amaterno}}</td>
                                     <td>{{$item->puesto}}</td>
                                     <td>{{$item->salario}}</td>
+                                    <td>{{$item->tel}}</td>
+                                    <td>{{$item->fecha_contratacion}}</td>
                                     <td class="text-center">
                                         <form action="{{ route('empleados.edit',$item->id) }}" method="GET">
                                             <button class="btn btn-warning btn-sm">
