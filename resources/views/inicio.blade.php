@@ -34,6 +34,8 @@
                             <th>Apellido Materno</th>
                             <th>Puesto</th>
                             <th>Salario</th>
+                            <th>Telefono de contacto</th>
+                            <th>Fecha de contración</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </thead>
